@@ -19,6 +19,7 @@
           background-color: var(--mist);
       }
 
+      /* Overall container. */
       #container {
         display: flex; 
         flex-direction: column; 
@@ -31,6 +32,7 @@
         width: 100%;
       }
 
+      /* Clock, timezone, and the caption */
       .clockcontainer {
         text-align: center; 
         border: solid; 
@@ -58,12 +60,13 @@
         font-size: 20px;
         color: var(--foliage);
       }
-
-      #hyperlink {
+    
+      /* Hyperlink to the main website */
+      #mainwebsite {
         position: relative; 
         display: flex;
         justify-content: center;
-        font-size: 28px;
+        font-size: 35px;
         color: var(--foliage);
         margin-top: 20px; 
       }
@@ -75,7 +78,42 @@
       a:hover {
         color: var(--stone);
       }
-      
+
+      /* IPAD */
+      @media only screen and (max-width: 768px) {
+        #timezone {
+          font-size: 20px; 
+        } 
+        #clock {
+          font-size: 28px; 
+        }
+        #caption {
+          font-size: 15px; 
+        }
+        #mainwebsite {
+          font-size: 25px;
+        }
+      }
+
+      /* iPhone 6,7,8,X */ 
+      @media only screen and (max-width: 414px) {
+        .clockcontainer {
+          padding: 0px; 
+        }
+        #timezone {
+          font-size: 14px; 
+        } 
+        #clock {
+          font-size: 14px; 
+        }
+        #caption {
+          font-size: 14px; 
+        }
+        #mainwebsite {
+          margin-top: 10px; 
+          font-size: 18px;
+        }
+      }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2º Window</title>
@@ -89,7 +127,7 @@
         <div id=clock></div>
         <div id=caption></div>
       </div>
-      <div id=hyperlink><a href=https://www.amaykataria.com/twodegreewindow/ target=_blank>2º Window Project</a>&nbspby Amay Kataria</div>
+      <div id=mainwebsite><a href=https://www.amaykataria.com/twodegreewindow/ target=_blank>2º Window Project</a>&nbspby Amay Kataria</div>
     </div>
   </body>
   <script>
@@ -101,7 +139,6 @@
     var tzEl = document.getElementById('timezone'); 
     var clockEl = document.getElementById('clock');
     var caption = document.getElementById('caption');
-    var hyperlinks = document.getElementById('hyperlinks');
 
     // Future moments. 
     var currentTimezone = moment.tz.guess(); 
